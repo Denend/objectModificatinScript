@@ -53,7 +53,6 @@ const mapValues = (objectsArr, key, objToMap) =>
 	objectsArr.forEach((obj, index) => {
 		const flattenedObj = flatten(obj);
 		const customKey = `value${index + 1}`;
-		// console.log(customKey, flattenedObj[key]);
 		if (flattenedObj[key]) {
 			const formatedValue = formatValue(flattenedObj[key]);
 			objToMap[customKey] = formatedValue;
@@ -67,7 +66,7 @@ const transformObject = (objectsArr, conditions, localizations) => {
 	let targetArray = [];
 	const flattenedConditions = flatten(conditions);
 	for (i in flattenedConditions) {
-		const targetObject = { name: "" };
+		const targetObject = {};
 		if (flattenedConditions[i]) {
 			//checks if key is true in conditions
 			const fullKeyName = localizations[i];
